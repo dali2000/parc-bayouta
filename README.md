@@ -3,13 +3,14 @@
 Site statique (HTML5, CSS3, JavaScript sans dépendance) pour **Parc Bayouta**, espace familial à El Khetmine (Tunisie) : café, restaurant, salle des fêtes, mini-foot et espace de jeux.
 
 ```
-index.html            page unique (Accueil, À propos, Menu, Galerie, Services, Salle des fêtes, Infos, Localisation, Contact)
+index.html            page d'accueil (Accueil, À propos, Galerie, Services, Salle des fêtes, Infos, Localisation, Contact)
 style.css             styles et animations
 script.js             menu mobile, animations, galerie dynamique, visionneuse, chargement différé
 data/gallery.json     publications affichées dans la galerie et la section « Salle des fêtes »
+menu.html, menu.css, menu.js   page du menu digital (lit data/menu.json)
 data/menu.json        menu digital : catégories, plats et prix
 qr-menu.html          chevalets de table à imprimer, avec le QR code du menu
-assets/qr-menu.svg    QR code vers https://dali2000.github.io/parc-bayouta/#carte
+assets/qr-menu.svg    QR code vers https://dali2000.github.io/parc-bayouta/menu.html
 scripts/              mise à jour automatique de la galerie (update-gallery.mjs) et ses tests
 .github/workflows/    tâche planifiée GitHub Actions (toutes les heures)
 package.json          commandes npm test / update-gallery (aucune dépendance)
@@ -66,7 +67,11 @@ Instagram ne fournit cette image qu'en **150 × 150 px**. C'est suffisant pour l
 
 ## Menu digital
 
-La section **Menu** (`#carte`) affiche le contenu de `data/menu.json`, avec un filtre par catégorie et une recherche. Les accents sont ignorés : « cafe » trouve « Café ».
+Le menu a sa propre page, **`menu.html`** (https://dali2000.github.io/parc-bayouta/menu.html), conçue d'abord pour le téléphone : les clients y arrivent par le QR code des tables, ou par le lien « Menu » du site. Elle affiche le contenu de `data/menu.json`.
+
+- **Catégories :** une barre de catégories reste en haut de l'écran. Elle mène à chaque partie du menu et suit le défilement.
+- **Recherche :** les accents sont ignorés, « cafe » trouve « Café ».
+- **Lien direct vers une catégorie :** `menu.html#cat-<id>`, par exemple `menu.html#cat-cafe`.
 
 **Tant que le fichier ne contient aucun plat,** le site affiche « Le menu digital arrive bientôt » avec le numéro de téléphone. Les catégories sans plat ne sont pas affichées.
 
@@ -112,7 +117,7 @@ La section **Menu** (`#carte`) affiche le contenu de `data/menu.json`, avec un f
 Si l'adresse du site change (nom de domaine), régénérez-le :
 
 ```
-npx qrcode -t svg -e H -q 0 -d "#141a2e" -l "#ffffff00" -o assets/qr-menu.svg "https://<nouvelle-adresse>/#carte"
+npx qrcode -t svg -e H -q 0 -d "#141a2e" -l "#ffffff00" -o assets/qr-menu.svg "https://<nouvelle-adresse>/menu.html"
 ```
 
 ## Galerie dynamique

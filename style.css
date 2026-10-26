@@ -209,60 +209,6 @@ svg { width: 1.25em; height: 1.25em; flex-shrink: 0; }
 .about-quote figcaption a { color: var(--gold-400); }
 .quote-mono { position: absolute; right: -24px; bottom: -36px; width: 240px; height: auto; color: rgba(220, 188, 148, 0.13); }
 
-/* Menu digital : une carte « papier » crème posée sur fond marine */
-.carte { background: var(--navy-800); color: var(--cream-100); }
-.carte h2 { color: var(--cream-50); }
-.carte h2 em { color: var(--gold-400); }
-.carte .eyebrow { color: var(--gold-400); }
-.carte .section-intro { color: var(--mist-200); }
-.carte-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-bottom: clamp(24px, 3vw, 36px); }
-.carte-toolbar[hidden] { display: none; }
-.carte .chip { color: var(--cream-100); border-color: rgba(255, 255, 255, 0.2); }
-.carte .chip span { background: rgba(255, 255, 255, 0.1); color: var(--mist-200); }
-.carte .chip:hover { border-color: var(--gold-400); }
-.carte .chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--navy-900); }
-.carte .chip.is-active span { background: var(--navy-800); color: var(--gold-300); }
-.carte-search {
-  display: flex; align-items: center; gap: 10px; min-width: min(280px, 100%); padding: 0 18px; border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06); border: 1.5px solid rgba(255, 255, 255, 0.2); color: var(--mist-200);
-  transition: border-color 0.3s;
-}
-.carte-search:focus-within { border-color: var(--gold-400); }
-.carte-search input { flex: 1; min-width: 0; padding: 0.8em 0; border: 0; background: none; color: #fff; font: 500 0.95rem var(--font-body); outline: none; }
-.carte-search input::placeholder { color: var(--mist-200); opacity: 0.8; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-.carte-paper {
-  position: relative; padding: clamp(28px, 5vw, 64px); border-radius: var(--radius-lg);
-  background: var(--cream-50); color: var(--ink); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.6);
-}
-.carte-paper::before {
-  content: ""; position: absolute; inset: 12px; border: 1px solid var(--gold-300); border-radius: calc(var(--radius-lg) - 8px); pointer-events: none;
-}
-.carte-columns { columns: 2 340px; column-gap: clamp(40px, 6vw, 80px); }
-.carte-cat { break-inside: avoid; margin-bottom: clamp(32px, 4vw, 48px); }
-.carte-cat:last-child { margin-bottom: 0; }
-.carte-cat h3 {
-  display: flex; align-items: center; gap: 14px; font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem); color: var(--navy-800); margin-bottom: 1.1rem;
-}
-.carte-cat h3::after { content: ""; flex: 1; height: 1px; background: var(--gold-300); }
-.carte-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
-.carte-item-head { display: flex; align-items: baseline; gap: 10px; }
-.carte-item-name { font-weight: 700; color: var(--navy-800); }
-.carte-dots { flex: 1; min-width: 20px; border-bottom: 1.5px dotted var(--cream-200); transform: translateY(-4px); }
-.carte-price { font: 600 1.05rem var(--font-display); color: var(--gold-700); white-space: nowrap; }
-.carte-desc { margin: 0.15rem 0 0; font-size: 0.92rem; color: var(--ink-soft); line-height: 1.5; }
-.carte-badges { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-left: 4px; vertical-align: 2px; }
-.carte-badge { white-space: nowrap; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25em 0.6em; border-radius: 999px; background: var(--cream-100); color: var(--gold-700); }
-.carte-badge--nouveau { background: var(--accent); color: var(--navy-900); }
-.carte-item.is-off .carte-item-name, .carte-item.is-off .carte-price { color: var(--ink-soft); text-decoration: line-through; }
-.carte-empty { position: relative; text-align: center; max-width: 34em; margin-inline: auto; padding: clamp(12px, 3vw, 28px) 0; }
-.carte-empty-icon { width: 60px; height: 60px; padding: 15px; border-radius: 18px; margin: 0 auto 1.4rem; background: var(--cream-100); color: var(--gold-700); }
-.carte-empty h3 { font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem); color: var(--navy-800); margin-bottom: 0.6rem; }
-.carte-empty p { color: var(--ink-soft); }
-.carte-note { margin: 1.2rem 0 0; font-size: 0.88rem; color: var(--mist-200); text-align: center; }
-.carte-note[hidden] { display: none; }
-
 /* Galerie */
 .gallery { background: var(--cream-100); }
 .photo-grid {
@@ -610,8 +556,6 @@ svg { width: 1.25em; height: 1.25em; flex-shrink: 0; }
   .insta-item { flex: 0 0 84%; scroll-snap-align: start; }
   .gallery-filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scrollbar-width: none; flex: 0 0 calc(100% + 2 * var(--gutter)); }
   .chip { flex-shrink: 0; }
-  .carte-search { flex: 1 1 100%; }
-  .carte-paper::before { inset: 8px; }
   .gallery-more { margin-top: 12px; }
   .contact-inner { border-radius: 28px; }
   .contact-actions .btn { flex: 1 1 100%; }
