@@ -596,8 +596,10 @@ svg { width: 1.25em; height: 1.25em; flex-shrink: 0; }
   }
   .nav.is-open { clip-path: circle(150% at calc(100% - 40px) 33px); visibility: visible; transition: clip-path 0.7s var(--ease); }
   .nav a:not(.btn) { font: 400 2rem var(--font-display); }
-  .site-header.menu-open { color: var(--cream-50); background: transparent; box-shadow: none; }
+  /* sans backdrop-filter : sinon l'en-tête défilé devient le cadre du menu plein écran, réduit à sa hauteur */
+  .site-header.menu-open { color: var(--cream-50); background: transparent; box-shadow: none; backdrop-filter: none; }
   .site-header.menu-open .brand em { color: var(--gold-400); }
+  .header-inner .brand, .header-inner .theme-toggle { position: relative; z-index: 2; } /* restent visibles au-dessus du menu ouvert */
   .fab-call { display: grid; }
 }
 
