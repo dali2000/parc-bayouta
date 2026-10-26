@@ -5,6 +5,7 @@ Site statique (HTML5, CSS3, JavaScript sans dépendance) pour **Parc Bayouta**, 
 ```
 index.html            page d'accueil (Accueil, À propos, Galerie, Services, Salle des fêtes, Infos, Localisation, Contact)
 style.css             styles et animations
+theme.js              thème clair / sombre (suit le téléphone, bouton pour changer, choix mémorisé)
 script.js             menu mobile, animations, galerie dynamique, visionneuse, chargement différé
 data/gallery.json     publications affichées dans la galerie et la section « Salle des fêtes »
 menu.html, menu.css, menu.js   page du menu digital (lit data/menu.json)
