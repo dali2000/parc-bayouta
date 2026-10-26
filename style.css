@@ -590,15 +590,15 @@ svg { width: 1.25em; height: 1.25em; flex-shrink: 0; }
   .nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4.4px) rotate(-45deg); }
   .nav {
     position: fixed; inset: 0; flex-direction: column; justify-content: center; gap: 26px;
-    background: var(--navy-900); color: var(--cream-50);
+    background: var(--bg); color: var(--heading);
     clip-path: circle(0 at calc(100% - 40px) 33px); visibility: hidden;
     transition: clip-path 0.7s var(--ease), visibility 0s 0.7s;
   }
   .nav.is-open { clip-path: circle(150% at calc(100% - 40px) 33px); visibility: visible; transition: clip-path 0.7s var(--ease); }
   .nav a:not(.btn) { font: 400 2rem var(--font-display); }
   /* sans backdrop-filter : sinon l'en-tête défilé devient le cadre du menu plein écran, réduit à sa hauteur */
-  .site-header.menu-open { color: var(--cream-50); background: transparent; box-shadow: none; backdrop-filter: none; }
-  .site-header.menu-open .brand em { color: var(--gold-400); }
+  .site-header.menu-open { color: var(--heading); background: transparent; box-shadow: none; backdrop-filter: none; }
+  .site-header.menu-open .brand em { color: var(--accent-text); }
   .header-inner .brand, .header-inner .theme-toggle { position: relative; z-index: 2; } /* restent visibles au-dessus du menu ouvert */
   .fab-call { display: grid; }
 }
