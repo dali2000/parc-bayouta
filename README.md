@@ -3,10 +3,13 @@
 Site statique (HTML5, CSS3, JavaScript sans dépendance) pour **Parc Bayouta**, espace familial à El Khetmine (Tunisie) : café, restaurant, salle des fêtes, mini-foot et espace de jeux.
 
 ```
-index.html            page unique (Accueil, À propos, Galerie, Services, Salle des fêtes, Infos, Localisation, Contact)
+index.html            page unique (Accueil, À propos, Menu, Galerie, Services, Salle des fêtes, Infos, Localisation, Contact)
 style.css             styles et animations
 script.js             menu mobile, animations, galerie dynamique, visionneuse, chargement différé
 data/gallery.json     publications affichées dans la galerie et la section « Salle des fêtes »
+data/menu.json        menu digital : catégories, plats et prix
+qr-menu.html          chevalets de table à imprimer, avec le QR code du menu
+assets/qr-menu.svg    QR code vers https://dali2000.github.io/parc-bayouta/#carte
 scripts/              mise à jour automatique de la galerie (update-gallery.mjs) et ses tests
 .github/workflows/    tâche planifiée GitHub Actions (toutes les heures)
 package.json          commandes npm test / update-gallery (aucune dépendance)
@@ -60,6 +63,57 @@ Instagram ne fournit cette image qu'en **150 × 150 px**. C'est suffisant pour l
 **Monogramme « PB » animé** (accueil, citation, bloc contact) : en l'absence du fichier vectoriel du logo, il est composé avec la police **Italianno** (Google Fonts) et le dégradé or du logo. Il évoque le monogramme sans en être une copie exacte. Au chargement, le tracé se dessine, se remplit d'or, puis flotte doucement (désactivé si le visiteur limite les animations). Si l'établissement fournit son logo en SVG, remplacez les deux balises `<text>` (P et B) dans `index.html` (`.hero-monogram` et `<symbol id="monogram">`) par le tracé officiel.
 
 **Non indiqués, car non confirmés :** horaires d'ouverture, menu et tarifs détaillés, prise de réservation, numéro WhatsApp, ainsi que le détail de la salle des fêtes (capacité, tarifs, formules) et les horaires du café-restaurant. Le site renvoie vers le téléphone et les réseaux pour ces informations. Ajoutez-les une fois qu'ils sont confirmés par l'établissement.
+
+## Menu digital
+
+La section **Menu** (`#carte`) affiche le contenu de `data/menu.json`, avec un filtre par catégorie et une recherche. Les accents sont ignorés : « cafe » trouve « Café ».
+
+**Tant que le fichier ne contient aucun plat,** le site affiche « Le menu digital arrive bientôt » avec le numéro de téléphone. Les catégories sans plat ne sont pas affichées.
+
+### Format de `data/menu.json`
+
+```json
+{
+  "devise": "DT",
+  "miseAJour": "2026-11-01",
+  "remarque": "Texte facultatif affiché sous le menu.",
+  "categories": [
+    {
+      "id": "cafe",
+      "nom": "Cafés & boissons chaudes",
+      "plats": [
+        { "nom": "Express", "prix": 2.5 },
+        { "nom": "Thé aux pignons", "description": "Menthe fraîche, pignons de pin", "prix": 6.5, "badges": ["maison"] },
+        { "nom": "Jus de saison", "prix": "6 / 8", "indisponible": true }
+      ]
+    }
+  ]
+}
+```
+
+| Champ | Rôle |
+|---|---|
+| `devise` | Ajoutée après les prix numériques (`DT` par défaut) |
+| `miseAJour` | Date affichée sous le menu (« Menu mis à jour le … »), facultative |
+| `remarque` | Phrase affichée sous le menu, facultative |
+| `id`, `nom` | Identifiant et titre de la catégorie ; l'ordre du fichier est l'ordre d'affichage |
+| `prix` | Nombre (`2.5` s'affiche « 2,500 DT », `12` s'affiche « 12 DT ») ou texte tel quel (`"6 / 8"`) |
+| `description` | Ligne sous le nom du plat, facultative |
+| `badges` | `nouveau`, `maison` (Fait maison), `populaire`, `vegetarien`, `epice` |
+| `indisponible` | `true` barre le plat (rupture momentanée) |
+| `masque` | `true` le retire du site sans le supprimer du fichier |
+
+**Modifier le menu :** sur GitHub, ouvrez `data/menu.json`, cliquez sur le crayon, modifiez, puis **Commit changes**. Le site est à jour en une à deux minutes, sans toucher à `index.html`. Les clients déjà sur la page voient les nouveaux prix au prochain chargement.
+
+### QR code pour les tables
+
+`qr-menu.html` (en ligne : https://dali2000.github.io/parc-bayouta/qr-menu.html) affiche 4 chevalets de table par feuille A4 : bouton **Imprimer**, sans marges, puis découpez. Le QR code `assets/qr-menu.svg` ouvre directement le menu. Il ne change pas quand le menu est modifié : inutile de réimprimer.
+
+Si l'adresse du site change (nom de domaine), régénérez-le :
+
+```
+npx qrcode -t svg -e H -q 0 -d "#141a2e" -l "#ffffff00" -o assets/qr-menu.svg "https://<nouvelle-adresse>/#carte"
+```
 
 ## Galerie dynamique
 

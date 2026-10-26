@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR code du menu — Parc Bayouta</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/logo-parc-bayouta.jpg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Chevalet de table à imprimer : 4 cartes A6 par feuille A4, à découper */
+    :root { --navy: #141a2e; --gold: #85602f; --gold-light: #e6cfae; --cream: #fbf8f3; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px 16px; background: #e8dfd0; font-family: Manrope, system-ui, sans-serif; color: var(--navy); }
+    .toolbar { max-width: 210mm; margin: 0 auto 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+    .toolbar p { margin: 0; font-size: 0.9rem; }
+    .toolbar button { padding: 0.8em 1.4em; border: 0; border-radius: 999px; background: var(--navy); color: var(--cream); font: 700 0.9rem Manrope, sans-serif; cursor: pointer; }
+    .sheet { width: 210mm; max-width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
+    .card {
+      aspect-ratio: 105 / 148; padding: 9mm 8mm; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+      text-align: center; background: var(--cream); outline: 1px dashed #cbbfa8; position: relative;
+    }
+    .card::before { content: ""; position: absolute; inset: 4mm; border: 1px solid var(--gold-light); border-radius: 4mm; pointer-events: none; }
+    .logo { width: 22mm; height: 22mm; border-radius: 50%; }
+    .eyebrow { margin: 0; font-size: 7pt; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    h1 { margin: 1mm 0 0; font: 400 20pt/1.05 Fraunces, Georgia, serif; }
+    h1 em { color: var(--gold); }
+    .qr { width: 46mm; height: 46mm; padding: 3mm; background: #fff; border-radius: 3mm; box-shadow: 0 0 0 1px var(--gold-light); }
+    .hint { margin: 0; font-size: 8.5pt; line-height: 1.4; }
+    .hint strong { display: block; font-size: 10pt; }
+    .url { margin: 0; font-size: 6.5pt; color: #4d5263; word-break: break-all; }
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .toolbar { display: none; }
+      .sheet { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <p>4 chevalets de table par feuille A4 : imprimez sans marges, puis découpez le long des pointillés.</p>
+    <button type="button" onclick="window.print()">Imprimer</button>
+  </div>
+  <main class="sheet" data-sheet>
+    <section class="card">
+      <img class="logo" src="assets/logo-parc-bayouta.jpg" alt="Logo Parc Bayouta">
+      <div>
+        <p class="eyebrow">Menu digital</p>
+        <h1>Notre <em>carte</em></h1>
+      </div>
+      <img class="qr" src="assets/qr-menu.svg" alt="QR code vers le menu de Parc Bayouta">
+      <p class="hint"><strong>Scannez pour voir le menu</strong>Ouvrez l'appareil photo de votre téléphone et visez le code.</p>
+      <p class="url">dali2000.github.io/parc-bayouta/#carte</p>
+    </section>
+  </main>
+  <script>
+    // duplique la carte pour remplir la feuille A4 (2 × 2)
+    var sheet = document.querySelector("[data-sheet]");
+    var card = sheet.querySelector(".card");
+    for (var i = 0; i < 3; i++) sheet.appendChild(card.cloneNode(true));
+  </script>
+</body>
+</html>

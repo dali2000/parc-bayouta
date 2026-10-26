@@ -1,0 +1,14 @@
+{
+  "devise": "DT",
+  "miseAJour": null,
+  "remarque": "",
+  "categories": [
+    { "id": "cafe", "nom": "Cafés & boissons chaudes", "plats": [] },
+    { "id": "boissons", "nom": "Boissons fraîches & jus", "plats": [] },
+    { "id": "petit-dejeuner", "nom": "Petit-déjeuner", "plats": [] },
+    { "id": "plats", "nom": "Plats", "plats": [] },
+    { "id": "pizzas-sandwichs", "nom": "Pizzas & sandwichs", "plats": [] },
+    { "id": "enfants", "nom": "Menu enfants", "plats": [] },
+    { "id": "desserts", "nom": "Desserts & glaces", "plats": [] }
+  ]
+}
