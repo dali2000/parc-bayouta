@@ -34,7 +34,7 @@ npx serve .        # ou : python -m http.server 8000
 2. Dans **Settings → Pages**, choisissez **Deploy from a branch**, branche `main`, dossier `/ (root)`.
 3. Le site est publié à l'adresse `https://<compte>.github.io/<depot>/`.
 
-Une fois l'adresse définitive connue, ajoutez dans `<head>` une balise `<link rel="canonical" href="…">` et une balise `og:url`.
+Les balises `<link rel="canonical">` et `og:url` de `index.html` et `menu.html` pointent vers `https://dali2000.github.io/parc-bayouta/`. Si le site passe sur un nom de domaine, mettez-les à jour (ainsi que le QR code du menu).
 
 ## Sources des informations
 
