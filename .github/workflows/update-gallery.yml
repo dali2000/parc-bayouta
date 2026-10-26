@@ -1,0 +1,51 @@
+name: Mettre à jour la galerie
+
+# Toutes les heures, récupère les nouvelles publications Instagram / Facebook de Parc Bayouta,
+# rafraîchit les J'aime, commentaires, partages et le nombre d'abonnés,
+# et met à jour data/gallery.json. GitHub Pages republie ensuite le site automatiquement.
+on:
+  schedule:
+    - cron: "17 * * * *" # toutes les heures, à la 17e minute
+  workflow_dispatch: # bouton « Run workflow » pour une mise à jour immédiate
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-gallery
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests du script
+        run: node --test scripts/
+
+      - name: Récupérer les nouvelles publications
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GALLERY_SOURCES: ${{ vars.GALLERY_SOURCES }}
+          MAX_AUTO_ITEMS: ${{ vars.MAX_AUTO_ITEMS }}
+        run: node scripts/update-gallery.mjs
+
+      - name: Publier si la galerie a changé
+        run: |
+          if git diff --quiet -- data/gallery.json; then
+            echo "Aucun changement (publications et chiffres identiques)."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/gallery.json
+          git commit -m "Galerie : publications et chiffres à jour"
+          git push

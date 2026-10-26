@@ -1,0 +1,157 @@
+{
+  "updatedAt": "2026-10-26T12:36:42.000Z",
+  "stats": {
+    "instagram": {
+      "followers": 2826,
+      "posts": 204
+    },
+    "facebook": {
+      "followers": 11000,
+      "approximate": true
+    }
+  },
+  "items": [
+    {
+      "id": "fb:122163133958937489",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/photo.php?fbid=122163133958937489",
+      "date": "2026-03-30T12:49:56.000Z",
+      "category": "lieu",
+      "title": "Le bâtiment, la terrasse et la pelouse",
+      "pinned": true,
+      "wide": true,
+      "metrics": {
+        "likes": 17,
+        "comments": 1
+      }
+    },
+    {
+      "id": "ig:DelfQdCAupS",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/p/DelfQdCAupS/",
+      "date": "2026-10-17T06:41:33.277Z",
+      "category": "saveurs",
+      "title": "Le buffet",
+      "pinned": true,
+      "metrics": {
+        "likes": 4
+      }
+    },
+    {
+      "id": "fb:122190103934937489",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/photo.php?fbid=122190103934937489",
+      "date": "2026-10-14T07:49:16.000Z",
+      "category": "fetes",
+      "title": "La salle des fêtes : lustres, tables rondes et espace scène",
+      "pinned": true,
+      "metrics": {
+        "likes": 0,
+        "comments": 0,
+        "shares": 1
+      }
+    },
+    {
+      "id": "ig:De6mqs3gBBP",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6mqs3gBBP/",
+      "date": "2026-10-25T11:30:21.384Z",
+      "category": "lieu",
+      "title": "Le jardin et sa fontaine",
+      "metrics": {
+        "likes": 10
+      }
+    },
+    {
+      "id": "ig:De6mQnTgWHX",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6mQnTgWHX/",
+      "date": "2026-10-25T11:26:47.680Z",
+      "category": "animations",
+      "title": "Spectacle en salle",
+      "metrics": {
+        "likes": 10
+      }
+    },
+    {
+      "id": "ig:De6mIshgIw1",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6mIshgIw1/",
+      "date": "2026-10-25T11:25:42.812Z",
+      "category": "animations",
+      "title": "Les familles en salle",
+      "metrics": {
+        "likes": 2
+      }
+    },
+    {
+      "id": "ig:De6hoJHAmkj",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6hoJHAmkj/",
+      "date": "2026-10-25T10:46:18.983Z",
+      "category": "lieu",
+      "title": "Le comptoir",
+      "metrics": {
+        "likes": 2
+      }
+    },
+    {
+      "id": "ig:De6eqh2gNl1",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6eqh2gNl1/",
+      "date": "2026-10-25T10:20:25.670Z",
+      "category": "animations",
+      "title": "Animation clown pour les enfants",
+      "metrics": {
+        "likes": 15
+      }
+    },
+    {
+      "id": "ig:De6dqvtAPf3",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6dqvtAPf3/",
+      "date": "2026-10-25T10:11:43.155Z",
+      "category": "animations",
+      "title": "Ambiance festive",
+      "metrics": {
+        "likes": 11
+      }
+    },
+    {
+      "id": "ig:De6a8uxgjCK",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/De6a8uxgjCK/",
+      "date": "2026-10-25T09:47:57.628Z",
+      "category": "animations",
+      "title": "Chant en live",
+      "metrics": {
+        "likes": 6
+      }
+    },
+    {
+      "id": "fb:122190308474937489",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/photo.php?fbid=122190308474937489",
+      "date": "2026-10-15T17:53:23.000Z",
+      "category": "fetes",
+      "title": "Un décor d'anniversaire pour fêter en famille",
+      "metrics": {
+        "likes": 7,
+        "comments": 6,
+        "shares": 2
+      }
+    },
+    {
+      "id": "fb:122190229886937489",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/photo.php?fbid=122190229886937489",
+      "date": "2026-10-15T06:23:25.000Z",
+      "category": "lieu",
+      "title": "La salle intérieure",
+      "metrics": {
+        "likes": 16,
+        "comments": 0
+      }
+    }
+  ]
+}

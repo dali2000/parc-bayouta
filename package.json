@@ -1,0 +1,13 @@
+{
+  "name": "parc-bayouta-site",
+  "private": true,
+  "description": "Site vitrine statique de Parc Bayouta, avec mise à jour automatique de la galerie",
+  "scripts": {
+    "test": "node --test scripts/",
+    "update-gallery": "node scripts/update-gallery.mjs",
+    "serve": "npx serve ."
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
