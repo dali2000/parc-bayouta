@@ -16,6 +16,7 @@ scripts/              mise à jour automatique de la galerie (update-gallery.mjs
 .github/workflows/    tâche planifiée GitHub Actions (toutes les heures)
 package.json          commandes npm test / update-gallery (aucune dépendance)
 assets/logo-parc-bayouta.jpg   logo officiel (en-tête, accueil, pied de page, icône du site)
+assets/og-image.jpg   image d'aperçu 1200 × 630 (partage sur Facebook, WhatsApp…), construite autour du logo
 assets/photos/        photos hébergées avec le site + photos.js (liste des photos)
 .nojekyll             indique à GitHub Pages de servir les fichiers tels quels
 ```
