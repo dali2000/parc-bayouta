@@ -1,14 +1,85 @@
 {
   "devise": "DT",
-  "miseAJour": null,
-  "remarque": "",
+  "miseAJour": "2026-10-26",
+  "remarque": "Menu de démonstration : plats et prix fictifs, à remplacer par la vraie carte.",
   "categories": [
-    { "id": "cafe", "nom": "Cafés & boissons chaudes", "plats": [] },
-    { "id": "boissons", "nom": "Boissons fraîches & jus", "plats": [] },
-    { "id": "petit-dejeuner", "nom": "Petit-déjeuner", "plats": [] },
-    { "id": "plats", "nom": "Plats", "plats": [] },
-    { "id": "pizzas-sandwichs", "nom": "Pizzas & sandwichs", "plats": [] },
-    { "id": "enfants", "nom": "Menu enfants", "plats": [] },
-    { "id": "desserts", "nom": "Desserts & glaces", "plats": [] }
+    {
+      "id": "cafe",
+      "nom": "Cafés & boissons chaudes",
+      "plats": [
+        { "nom": "Express", "prix": 2.5 },
+        { "nom": "Direct", "description": "Café au lait", "prix": 3 },
+        { "nom": "Capucin", "prix": 3, "badges": ["populaire"] },
+        { "nom": "Cappuccino", "prix": 4.5 },
+        { "nom": "Thé à la menthe", "prix": 2.5 },
+        { "nom": "Thé aux pignons", "description": "Thé vert, menthe fraîche et pignons de pin", "prix": 7, "badges": ["maison"] },
+        { "nom": "Chocolat chaud", "prix": 5 }
+      ]
+    },
+    {
+      "id": "boissons",
+      "nom": "Boissons fraîches & jus",
+      "plats": [
+        { "nom": "Eau minérale", "prix": "1,500 / 2,500", "description": "50 cl / 1,5 L" },
+        { "nom": "Soda", "prix": 3 },
+        { "nom": "Citronnade", "description": "Citron pressé, menthe", "prix": 4.5, "badges": ["maison"] },
+        { "nom": "Jus d'orange pressé", "prix": 5.5 },
+        { "nom": "Jus de fraise", "prix": 6, "badges": ["nouveau"] },
+        { "nom": "Milkshake", "description": "Vanille, chocolat ou fraise", "prix": 8 },
+        { "nom": "Mojito sans alcool", "prix": 9, "indisponible": true }
+      ]
+    },
+    {
+      "id": "petit-dejeuner",
+      "nom": "Petit-déjeuner",
+      "plats": [
+        { "nom": "Petit-déjeuner tunisien", "description": "Boisson chaude, jus, bsissa, huile d'olive, pain tabouna, œuf", "prix": 14, "badges": ["populaire"] },
+        { "nom": "Petit-déjeuner continental", "description": "Boisson chaude, jus, croissant, pain, beurre, confiture", "prix": 12 },
+        { "nom": "Omelette", "description": "Nature, fromage ou thon", "prix": 7 }
+      ]
+    },
+    {
+      "id": "plats",
+      "nom": "Plats",
+      "plats": [
+        { "nom": "Escalope grillée", "description": "Frites, salade, sauce au choix", "prix": 18 },
+        { "nom": "Escalope panée", "description": "Frites, salade", "prix": 18 },
+        { "nom": "Brochettes mixtes", "description": "Poulet et viande hachée, riz, salade méchouia", "prix": 22, "badges": ["populaire"] },
+        { "nom": "Ojja merguez", "description": "Sauce tomate, poivrons, œufs", "prix": 14, "badges": ["epice"] },
+        { "nom": "Couscous au poulet", "description": "Le vendredi", "prix": 16, "badges": ["maison"] },
+        { "nom": "Salade tunisienne", "prix": 7, "badges": ["vegetarien"] },
+        { "nom": "Salade César", "prix": 13, "badges": ["nouveau"] }
+      ]
+    },
+    {
+      "id": "pizzas-sandwichs",
+      "nom": "Pizzas & sandwichs",
+      "plats": [
+        { "nom": "Pizza Margherita", "prix": 12, "badges": ["vegetarien"] },
+        { "nom": "Pizza Thon", "prix": 14 },
+        { "nom": "Pizza 4 fromages", "prix": 16 },
+        { "nom": "Chapati", "description": "Thon, œuf, fromage, harissa", "prix": 6, "badges": ["epice"] },
+        { "nom": "Baguette farcie", "description": "Escalope ou thon, frites", "prix": 8 },
+        { "nom": "Burger Bayouta", "description": "Steak haché, cheddar, frites", "prix": 15, "badges": ["nouveau"] }
+      ]
+    },
+    {
+      "id": "enfants",
+      "nom": "Menu enfants",
+      "plats": [
+        { "nom": "Menu Mini", "description": "Nuggets ou mini-pizza, frites, jus et glace", "prix": 12, "badges": ["populaire"] }
+      ]
+    },
+    {
+      "id": "desserts",
+      "nom": "Desserts & glaces",
+      "plats": [
+        { "nom": "Crêpe sucrée", "description": "Sucre, miel ou confiture", "prix": 5 },
+        { "nom": "Crêpe Nutella", "prix": 7.5, "badges": ["populaire"] },
+        { "nom": "Gaufre", "prix": 7 },
+        { "nom": "Coupe de glace", "description": "3 boules au choix", "prix": 8 },
+        { "nom": "Fondant au chocolat", "prix": 9, "badges": ["maison"] }
+      ]
+    }
   ]
 }
